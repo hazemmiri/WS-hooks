@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -50,7 +51,7 @@ const Search = styled('div')(({ theme }) => ({
     },
   }));
 
-const NavBar = (setSearchTitle) => {
+const NavBar = ({setSearchTitle}) => {
   return (
     
       <Box sx={{ flexGrow: 1 }}>
@@ -71,7 +72,31 @@ const NavBar = (setSearchTitle) => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            Movies App
+          < Link style={{textDecoration:"none" , color:"white"}} to="/"> Home </Link>    
+          </Typography>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+          >
+             <Link style={{textDecoration:"none" , color:"white"}} to="/about"> About</Link> 
+          </Typography>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+          >
+            <Link style={{textDecoration:"none" , color:"white"}} to="/contact">contact Us </Link> 
+          </Typography>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+          >
+           <Link style={{textDecoration:"none" , color:"white"}} to="/Movies"> MoviesList </Link> 
           </Typography>
           <Search>
             <SearchIconWrapper>

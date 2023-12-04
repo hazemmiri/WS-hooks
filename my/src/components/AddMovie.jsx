@@ -7,16 +7,14 @@ const AddMovie = (addMovie) => {
     const [description , setdescription] = useState("");
     const [poster_url , setposter_url] = useState("");
     const [date , setdate] = useState("");
-    const [ringat , setringat] = useState("");
+    const [ringat , setringat] = useState(0);
 
     const newMovie = {id:Math.random(), title , description , poster_url , date , ringat}
 
-
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true)
-  return (
-    <div>
+    return (
+    
         <>
         <Button variant="primary" onClick={handleShow}>
         Add Movie
@@ -65,7 +63,7 @@ const AddMovie = (addMovie) => {
         </Modal.Footer>
         </Modal>
     </>
-    </div>
+
   )
 }
 

@@ -15,6 +15,7 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Rating from '@mui/material/Rating';
+import { Link } from 'react-router-dom';
 
 
 const ExpandMore = styled((props) => {
@@ -34,10 +35,12 @@ const MovieCard = ({movie}) => {
     setExpanded(!expanded);
   };
 
-  const { id , titel , description , poster_url , rating , date} = movie
+  const { title , description , poster_url , rating , date , id } = movie
+  // console.log(id) 
   return (
     <div>
-     <Card sx={{ maxWidth: 345 }}>
+      <Link to={'/trailer/${id}'}>
+     <Card className='cards' sx={{ maxWidth: 345 }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -49,14 +52,14 @@ const MovieCard = ({movie}) => {
             <MoreVertIcon />
           </IconButton>
         }
-        title= {titel}
+        title= {title}
         subheader={date}
       />
       <CardMedia
         component="img"
         height="194"
         image={poster_url}
-        alt={titel}
+        alt={title}
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
@@ -99,6 +102,7 @@ const MovieCard = ({movie}) => {
         </CardContent>
       </Collapse>
     </Card>
+    </Link>
     </div>
   )
 }
